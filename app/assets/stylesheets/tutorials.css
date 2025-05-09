@@ -1,0 +1,323 @@
+/* Tutorials Page Styles - Enhanced Version */
+
+/* Tutorial Cards */
+.tutorial-card {
+  @apply bg-theme-primary rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-theme-tertiary/30 hover:shadow-lg;
+}
+
+.tutorial-card:hover {
+  @apply transform -translate-y-2;
+}
+
+.tutorial-card-image {
+  @apply h-52 w-full object-cover;
+}
+
+.tutorial-card-content {
+  @apply p-6;
+}
+
+.tutorial-card-title {
+  @apply text-xl font-bold text-theme-primary mb-3 line-clamp-2;
+}
+
+.tutorial-card-excerpt {
+  @apply text-theme-secondary mb-4 line-clamp-3 text-sm leading-relaxed;
+}
+
+.tutorial-card-meta {
+  @apply flex items-center justify-between text-sm text-theme-tertiary;
+}
+
+/* Featured Tutorial */
+.featured-tutorial {
+  @apply bg-gradient-to-tr from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg overflow-hidden;
+}
+
+.featured-tutorial-content {
+  @apply p-8 md:p-12;
+}
+
+.featured-tutorial-title {
+  @apply text-2xl md:text-3xl font-bold mb-3 text-white;
+}
+
+.featured-tutorial-excerpt {
+  @apply text-indigo-100 mb-6 max-w-2xl;
+}
+
+.featured-tutorial-meta {
+  @apply flex items-center text-indigo-200 text-sm;
+}
+
+.featured-tutorial-button {
+  @apply inline-flex items-center px-6 py-3 rounded-lg bg-white text-indigo-600 font-medium hover:bg-indigo-50 transition-colors shadow-md;
+}
+
+/* Category Pills */
+.category-pill {
+  @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200;
+}
+
+.category-pill.active {
+  @apply bg-indigo-600 text-white shadow-md;
+}
+
+.category-pill:not(.active) {
+  @apply bg-theme-secondary text-theme-primary hover:bg-indigo-100 hover:shadow-sm;
+}
+
+/* Category Icons */
+.category-icon {
+  @apply w-5 h-5 mr-2;
+}
+
+/* Tutorial Detail Page */
+.tutorial-detail-header {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 md:py-24;
+}
+
+.tutorial-detail-title {
+  @apply text-3xl md:text-4xl font-bold mb-4 text-white;
+}
+
+.tutorial-detail-description {
+  @apply text-indigo-100 mb-6 max-w-3xl text-lg;
+}
+
+.tutorial-detail-meta {
+  @apply flex flex-wrap items-center gap-6 text-indigo-200;
+}
+
+.tutorial-detail-author {
+  @apply flex items-center;
+}
+
+.tutorial-detail-author-avatar {
+  @apply w-12 h-12 rounded-full mr-3 border-2 border-indigo-300 object-cover;
+}
+
+.tutorial-detail-author-info {
+  @apply flex flex-col;
+}
+
+.tutorial-detail-author-name {
+  @apply font-medium text-white;
+}
+
+.tutorial-detail-author-role {
+  @apply text-xs;
+}
+
+.tutorial-detail-tag {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-700/60 text-white backdrop-blur-sm;
+}
+
+/* Tutorial Steps */
+.tutorial-steps {
+  @apply space-y-16 py-8;
+}
+
+.tutorial-step {
+  @apply bg-theme-primary rounded-xl shadow-md overflow-hidden border border-theme-tertiary/30 hover:shadow-lg transition-shadow duration-300;
+}
+
+.tutorial-step-content {
+  @apply p-6 md:p-8;
+}
+
+.tutorial-step-number {
+  @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white font-bold text-lg mr-3 shadow-md;
+}
+
+.tutorial-step-title {
+  @apply text-xl md:text-2xl font-bold text-theme-primary mb-4;
+}
+
+.tutorial-step-description {
+  @apply text-theme-secondary mb-6 text-lg leading-relaxed;
+}
+
+.tutorial-step-image {
+  @apply w-full h-64 md:h-72 object-cover rounded-lg;
+}
+
+/* Action buttons */
+.tutorial-action-btn {
+  @apply inline-flex items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors;
+}
+
+/* Social share buttons */
+.social-share-btn {
+  @apply inline-flex items-center px-4 py-2 rounded-lg text-white font-medium transition-colors shadow-sm;
+}
+
+/* Feedback buttons */
+.feedback-btn {
+  @apply inline-flex items-center px-4 py-2 rounded-lg border-2 font-medium transition-all duration-200;
+}
+
+.feedback-btn-yes {
+  @apply border-green-200 text-green-700 hover:bg-green-50 hover:border-green-300;
+}
+
+.feedback-btn-yes.active {
+  @apply bg-green-50 border-green-400;
+}
+
+.feedback-btn-no {
+  @apply border-red-200 text-red-700 hover:bg-red-50 hover:border-red-300;
+}
+
+.feedback-btn-no.active {
+  @apply bg-red-50 border-red-400;
+}
+
+/* Related Tutorials */
+.related-tutorials-title {
+  @apply text-2xl font-bold text-theme-primary mb-6;
+}
+
+.related-tutorial-card {
+  @apply bg-theme-primary rounded-xl shadow-sm overflow-hidden transition-all duration-300 border border-theme-tertiary/30 hover:shadow-md;
+}
+
+.related-tutorial-card:hover {
+  @apply transform -translate-y-1;
+}
+
+.related-tutorial-image {
+  @apply h-40 w-full object-cover;
+}
+
+.related-tutorial-content {
+  @apply p-5;
+}
+
+.related-tutorial-title {
+  @apply text-lg font-bold text-theme-primary mb-2 line-clamp-2;
+}
+
+.related-tutorial-excerpt {
+  @apply text-theme-secondary text-sm mb-3 line-clamp-2;
+}
+
+.related-tutorial-meta {
+  @apply flex items-center justify-between text-xs text-theme-tertiary;
+}
+
+/* Level Badges */
+.level-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-sm;
+}
+
+.level-badge-beginner {
+  @apply bg-green-100 text-green-800;
+}
+
+.level-badge-intermediate {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.level-badge-advanced {
+  @apply bg-purple-100 text-purple-800;
+}
+
+/* Duration Badge */
+.duration-badge {
+  @apply inline-flex items-center text-theme-tertiary;
+}
+
+.duration-icon {
+  @apply w-3.5 h-3.5 mr-1 flex-shrink-0;
+}
+
+/* Category Icons */
+.category-icon-rocket {
+  @apply text-indigo-500;
+}
+
+.category-icon-code {
+  @apply text-blue-500;
+}
+
+.category-icon-brush {
+  @apply text-pink-500;
+}
+
+.category-icon-chart {
+  @apply text-green-500;
+}
+
+.category-icon-chart-bar {
+  @apply text-yellow-500;
+}
+
+.category-icon-shield {
+  @apply text-red-500;
+}
+
+/* Animations */
+@keyframes animate-gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: animate-gradient-x 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes blob {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.1);
+  }
+  66% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tutorial-card-image {
+    @apply h-44;
+  }
+
+  .tutorial-step-image {
+    @apply h-48;
+  }
+
+  .tutorial-detail-meta {
+    @apply flex-col items-start gap-3;
+  }
+  
+  .social-share-btn span {
+    @apply hidden;
+  }
+  
+  .social-share-btn {
+    @apply p-2;
+  }
+}

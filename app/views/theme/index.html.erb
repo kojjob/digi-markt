@@ -1,0 +1,66 @@
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-bold mb-8 text-theme-primary">E-sika Theme System</h1>
+
+  <p class="mb-6 text-lg text-theme-secondary">
+    This page demonstrates the centralized theme system for the E-sika application.
+    The theme is implemented using CSS variables and utility classes, without modifying the tailwind.config.js file.
+  </p>
+
+  <div class="bg-theme-primary rounded-lg shadow-md p-6 mb-8">
+    <h2 class="text-2xl font-bold mb-4">How to Use the Theme</h2>
+
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-xl font-bold">1. Theme Variables</h3>
+        <p>Use CSS variables for consistent styling:</p>
+        <pre class="bg-theme-secondary p-4 rounded-md mt-2 overflow-x-auto">
+color: rgb(var(--color-primary-500) / 1);
+font-size: var(--text-lg);
+padding: var(--spacing-4);
+border-radius: var(--radius-md);
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">2. Theme Utility Classes</h3>
+        <p>Use the provided utility classes:</p>
+        <pre class="bg-theme-secondary p-4 rounded-md mt-2 overflow-x-auto">
+&lt;div class="text-primary-500 bg-secondary-100 p-4 rounded-lg shadow-md"&gt;
+  Content with theme styling
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">3. Theme Components</h3>
+        <p>Use the predefined component classes:</p>
+        <pre class="bg-theme-secondary p-4 rounded-md mt-2 overflow-x-auto">
+&lt;button class="theme-btn theme-btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;div class="theme-card"&gt;
+  &lt;div class="theme-card-header"&gt;Card Title&lt;/div&gt;
+  &lt;div class="theme-card-body"&gt;Card content&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">4. Dark Mode Support</h3>
+        <p>The theme system includes built-in dark mode support:</p>
+        <pre class="bg-theme-secondary p-4 rounded-md mt-2 overflow-x-auto">
+&lt;!-- Use theme utility classes that automatically adapt to the current theme --&gt;
+&lt;div class="bg-theme-primary text-theme-primary"&gt;
+  This content adapts to the current theme
+&lt;/div&gt;
+
+&lt;!-- Or use Tailwind's dark mode classes --&gt;
+&lt;div class="bg-white dark:bg-gray-800 text-black dark:text-white"&gt;
+  This content adapts to dark mode
+&lt;/div&gt;
+        </pre>
+        <p class="mt-2">Toggle dark mode using the button in the header.</p>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'shared/theme_example' %>
+</div>

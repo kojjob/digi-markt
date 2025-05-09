@@ -8,3 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* Import theme files */
+@import "theme.css";
+@import "theme-utilities.css";
+@import "theme-components.css";
+@import "navbar.css";
+@import "help_center.css";
+@import "tutorials.css";

@@ -1,0 +1,185 @@
+/* Help Center Styles */
+
+/* Article Content Styling */
+.markdown-content {
+  @apply text-theme-secondary leading-relaxed;
+}
+
+.markdown-content h1 {
+  @apply text-3xl font-bold text-theme-primary mb-6 mt-6;
+}
+
+.markdown-content h2 {
+  @apply text-2xl font-bold text-theme-primary mb-4 mt-8;
+}
+
+.markdown-content h3 {
+  @apply text-xl font-bold text-theme-primary mb-3 mt-6;
+}
+
+.markdown-content h4 {
+  @apply text-lg font-bold text-theme-primary mb-2 mt-4;
+}
+
+.markdown-content p {
+  @apply mb-4;
+}
+
+.markdown-content ul, .markdown-content ol {
+  @apply mb-4 ml-6;
+}
+
+.markdown-content ul {
+  @apply list-disc;
+}
+
+.markdown-content ol {
+  @apply list-decimal;
+}
+
+.markdown-content li {
+  @apply mb-2;
+}
+
+.markdown-content a {
+  @apply text-indigo-600 hover:text-indigo-800 underline;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-indigo-300 pl-4 italic my-4 text-theme-tertiary;
+}
+
+.markdown-content code {
+  @apply font-mono bg-theme-tertiary px-1 py-0.5 rounded text-sm;
+}
+
+.markdown-content pre {
+  @apply bg-theme-tertiary p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse mb-4;
+}
+
+.markdown-content th {
+  @apply border border-theme-tertiary bg-theme-secondary p-2 text-left;
+}
+
+.markdown-content td {
+  @apply border border-theme-tertiary p-2;
+}
+
+.markdown-content img {
+  @apply max-w-full h-auto rounded-lg my-4;
+}
+
+.markdown-content hr {
+  @apply my-8 border-t border-theme-tertiary;
+}
+
+/* Category Cards */
+.category-card {
+  @apply bg-theme-primary rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-theme-tertiary;
+}
+
+.category-card:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Article Cards */
+.article-card {
+  @apply bg-theme-primary rounded-lg p-4 transition-all duration-300 hover:bg-theme-secondary border border-theme-tertiary;
+}
+
+.article-card:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Search Box */
+.search-box {
+  @apply relative;
+}
+
+.search-box input {
+  @apply w-full py-3 px-4 pr-12 rounded-lg border border-theme-tertiary bg-theme-primary text-theme-primary placeholder-theme-tertiary focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors;
+}
+
+.search-box .search-icon {
+  @apply absolute right-4 top-1/2 transform -translate-y-1/2 text-theme-tertiary;
+}
+
+/* Sidebar */
+.help-sidebar {
+  @apply sticky top-24 overflow-y-auto max-h-[calc(100vh-6rem)];
+}
+
+/* Table of Contents */
+.toc {
+  @apply bg-theme-primary rounded-lg shadow-md p-4 border border-theme-tertiary;
+}
+
+.toc ul {
+  @apply list-none ml-0;
+}
+
+.toc li {
+  @apply mb-2;
+}
+
+.toc a {
+  @apply text-theme-secondary hover:text-indigo-600 transition-colors no-underline;
+}
+
+.toc .active {
+  @apply text-indigo-600 font-medium;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  @apply flex items-center text-sm text-theme-tertiary mb-6;
+}
+
+.breadcrumbs a {
+  @apply hover:text-indigo-600 transition-colors;
+}
+
+.breadcrumbs .separator {
+  @apply mx-2;
+}
+
+/* Feedback Section */
+.feedback-section {
+  @apply mt-12 pt-8 border-t border-theme-tertiary;
+}
+
+.feedback-button {
+  @apply px-4 py-2 rounded-lg border border-theme-tertiary bg-theme-primary text-theme-secondary hover:bg-theme-secondary transition-colors;
+}
+
+/* Search Results */
+.search-results {
+  @apply bg-theme-primary rounded-lg shadow-lg border border-theme-tertiary absolute left-0 right-0 z-10 mt-2 max-h-96 overflow-y-auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .help-sidebar {
+    @apply static max-h-none mb-8;
+  }
+  
+  .markdown-content h1 {
+    @apply text-2xl;
+  }
+  
+  .markdown-content h2 {
+    @apply text-xl;
+  }
+  
+  .markdown-content h3 {
+    @apply text-lg;
+  }
+}
