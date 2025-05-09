@@ -1,0 +1,27 @@
+
+
+<% 
+  # Default values
+  additional_classes ||= ''
+  
+  # Combined classes
+  classes = "theme-card #{additional_classes}"
+%>
+
+<div class="<%= classes %>">
+  <% if defined?(title) && title.present? %>
+    <div class="theme-card-header">
+      <h3 class="text-lg font-bold"><%= title %></h3>
+    </div>
+  <% end %>
+  
+  <div class="theme-card-body">
+    <%= yield %>
+  </div>
+  
+  <% if defined?(footer) && footer.present? %>
+    <div class="theme-card-footer">
+      <%= footer %>
+    </div>
+  <% end %>
+</div>

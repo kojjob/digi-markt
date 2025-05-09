@@ -1,0 +1,660 @@
+<%# About Page %>
+<div class="bg-theme-primary min-h-screen">
+  <%# Hero Section %>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <%# Background Elements %>
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-700 to-blue-600 opacity-90"></div>
+      <div class="absolute inset-0 bg-[url('/assets/patterns/grid-light.svg')] bg-center opacity-10"></div>
+      
+      <%# Decorative Elements %>
+      <div class="absolute top-0 right-0 -mt-40 -mr-40 w-96 h-96 rounded-full bg-pink-500 opacity-20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 -mb-40 -ml-40 w-96 h-96 rounded-full bg-blue-500 opacity-20 blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="text-white">
+          <h5 class="text-indigo-200 font-semibold tracking-wide uppercase mb-3">About E-sika</h5>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Transforming Online Business</h1>
+          <div class="w-24 h-1 bg-indigo-300 mb-6"></div>
+          <p class="text-xl text-indigo-100 mb-8 leading-relaxed">
+            E-sika is revolutionizing e-commerce with a comprehensive platform that empowers entrepreneurs and businesses to sell anything, anywhere, to anyone.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#our-story" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-700 transition-all duration-300">
+              Our Story
+              <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" transform="rotate(90 10 10)" />
+              </svg>
+            </a>
+            <a href="/contact" class="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-700 transition-all duration-300">
+              Contact Us
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <%# About Hero Image %>
+          <div class="relative rounded-lg overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/70 to-transparent z-10"></div>
+            <img 
+              src="/assets/images/about-hero.jpg" 
+              alt="E-sika Platform Dashboard" 
+              class="w-full h-auto object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='Team working on e-commerce platform'"
+            >
+            <div class="absolute bottom-0 left-0 p-6 z-20">
+              <div class="text-white text-lg font-semibold">Empowering businesses since 2022</div>
+            </div>
+          </div>
+          
+          <%# Floating Badges %>
+          <div class="absolute -top-6 -right-6 bg-white rounded-lg shadow-xl px-4 py-2 flex items-center space-x-2 transform rotate-3 z-20 animate-float">
+            <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-gray-800 font-bold">99.9% Uptime</span>
+          </div>
+          
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl px-4 py-2 flex items-center space-x-2 transform -rotate-3 z-20 animate-float-delayed">
+            <svg class="h-6 w-6 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="text-gray-800 font-bold">10,000+ Users</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Our Story Section %>
+  <section id="our-story" class="py-16 md:py-24 bg-theme-primary">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center mb-16">
+        <h5 class="text-indigo-600 font-semibold tracking-wide uppercase mb-3">Our Story</h5>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-primary">From Idea to Innovation</h2>
+        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+          E-sika was born from a simple but powerful vision: to create an all-in-one e-commerce platform that eliminates complexity and empowers entrepreneurs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <%# Timeline Items %>
+        <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-bl-full"></div>
+          <div class="relative">
+            <div class="bg-indigo-600 text-white text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center mb-6">
+              2022
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-theme-primary">The Beginning</h3>
+            <p class="text-theme-secondary">
+              Frustrated by the limitations of existing platforms, our founders set out to build a solution that would unite physical products, digital downloads, services, and dropshipping under one roof.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-bl-full"></div>
+          <div class="relative">
+            <div class="bg-indigo-600 text-white text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center mb-6">
+              2023
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-theme-primary">Rapid Growth</h3>
+            <p class="text-theme-secondary">
+              E-sika launched to overwhelming demand. Within our first year, we expanded our team, enhanced our platform with cutting-edge features, and helped thousands of businesses thrive online.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-bl-full"></div>
+          <div class="relative">
+            <div class="bg-indigo-600 text-white text-lg font-bold rounded-full w-12 h-12 flex items-center justify-center mb-6">
+              2025
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-theme-primary">Today & Beyond</h3>
+            <p class="text-theme-secondary">
+              Now a leader in the e-commerce space, E-sika continues to innovate with AI-powered features, enhanced analytics, and a commitment to helping businesses of all sizes succeed online.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <%# Founder Quote %>
+      <div class="mt-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-xl overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-0">
+          <div class="col-span-2 p-8 md:p-10 flex items-center justify-center">
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
+              <img 
+                src="/assets/images/founder.jpg" 
+                alt="Founder of E-sika" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='E-sika founder portrait'"
+              >
+            </div>
+          </div>
+          <div class="col-span-3 p-8 md:p-10 flex flex-col justify-center text-white">
+            <svg class="h-12 w-12 text-white/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-xl italic mb-6 leading-relaxed">
+              We created E-sika because we believe that entrepreneurship should be accessible to everyone. Technology should remove barriers, not create them. Our mission is to put enterprise-level e-commerce capabilities into the hands of every business owner, regardless of their technical expertise or budget.
+            </p>
+            <div>
+              <h4 class="text-xl font-bold">Alexandra Chen</h4>
+              <p class="text-indigo-200">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Our Values Section %>
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center mb-16">
+        <h5 class="text-indigo-600 font-semibold tracking-wide uppercase mb-3">Our Values</h5>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-primary">What Drives Us</h2>
+        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+          At E-sika, our values guide everything we do. They shape our product, our support, and our relationships with customers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <%# Value Cards %>
+        <div class="bg-white rounded-xl shadow-md p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-theme-primary">Trust & Security</h3>
+          <p class="text-theme-secondary">
+            We believe in building trust through secure, reliable systems that protect both businesses and their customers.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-theme-primary">Innovation</h3>
+          <p class="text-theme-secondary">
+            We constantly push boundaries to deliver cutting-edge solutions that help our users stay ahead in the competitive e-commerce landscape.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-theme-primary">Accessibility</h3>
+          <p class="text-theme-secondary">
+            We're committed to making powerful e-commerce tools accessible to businesses of all sizes, from solopreneurs to enterprises.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-theme-primary">Exceptional Support</h3>
+          <p class="text-theme-secondary">
+            We believe in being true partners to our customers, providing responsive, knowledgeable support at every step of their journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Team Section %>
+  <section class="py-16 md:py-24 bg-theme-primary">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center mb-16">
+        <h5 class="text-indigo-600 font-semibold tracking-wide uppercase mb-3">Our Team</h5>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-primary">Meet the Minds Behind E-sika</h2>
+        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+          We're a diverse team of designers, developers, and e-commerce experts committed to creating the best platform for online sellers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <%# Team Member Cards %>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+          <div class="relative overflow-hidden">
+            <img 
+              src="/assets/images/team-1.jpg" 
+              alt="Alexandra Chen - CEO" 
+              class="w-full h-64 object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='E-sika team member'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-theme-primary">Alexandra Chen</h3>
+            <p class="text-indigo-600 mb-3">Founder & CEO</p>
+            <p class="text-theme-secondary">
+              With over 15 years in e-commerce, Alexandra leads our vision with a focus on innovation and user experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+          <div class="relative overflow-hidden">
+            <img 
+              src="/assets/images/team-2.jpg" 
+              alt="Marcus Johnson - CTO" 
+              class="w-full h-64 object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='E-sika team member'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-theme-primary">Marcus Johnson</h3>
+            <p class="text-indigo-600 mb-3">CTO</p>
+            <p class="text-theme-secondary">
+              Marcus leads our engineering team, ensuring a robust, scalable platform that meets the demands of modern e-commerce.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+          <div class="relative overflow-hidden">
+            <img 
+              src="/assets/images/team-3.jpg" 
+              alt="Sofia Rodriguez - Head of Design" 
+              class="w-full h-64 object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='E-sika team member'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-theme-primary">Sofia Rodriguez</h3>
+            <p class="text-indigo-600 mb-3">Head of Design</p>
+            <p class="text-theme-secondary">
+              Sofia crafts our sleek, user-friendly interface that makes complex e-commerce tasks feel intuitive and effortless.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+          <div class="relative overflow-hidden">
+            <img 
+              src="/assets/images/team-4.jpg" 
+              alt="David Patel - Customer Success Lead" 
+              class="w-full h-64 object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='E-sika team member'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-theme-primary">David Patel</h3>
+            <p class="text-indigo-600 mb-3">Customer Success Lead</p>
+            <p class="text-theme-secondary">
+              David ensures our customers get the most from E-sika, leading our support and training initiatives with passion.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/careers" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300">
+          Join Our Team
+          <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <%# Stats Section %>
+  <section class="py-16 md:py-24 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-grid-white/[0.05] bg-grid-8"></div>
+    </div>
+    <%# Animated Floating Icons %>
+    <div class="absolute h-24 w-24 top-20 left-10 text-white/10 animate-float-slow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+    </div>
+    <div class="absolute h-32 w-32 bottom-10 right-10 text-white/10 animate-float-delayed">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+      </svg>
+    </div>
+    <div class="absolute h-20 w-20 top-40 right-1/4 text-white/10 animate-float">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">E-sika by the Numbers</h2>
+        <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+        <p class="text-xl text-indigo-100 max-w-3xl mx-auto">
+          Our platform powers thousands of businesses worldwide, helping them achieve their e-commerce goals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <%# Stat Cards %>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-300 hover:scale-105">
+          <div class="text-4xl md:text-5xl font-bold mb-2">10K+</div>
+          <div class="text-indigo-200 text-lg font-medium">Active Stores</div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-300 hover:scale-105">
+          <div class="text-4xl md:text-5xl font-bold mb-2">$150M+</div>
+          <div class="text-indigo-200 text-lg font-medium">Monthly Sales</div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-300 hover:scale-105">
+          <div class="text-4xl md:text-5xl font-bold mb-2">35+</div>
+          <div class="text-indigo-200 text-lg font-medium">Countries</div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-300 hover:scale-105">
+          <div class="text-4xl md:text-5xl font-bold mb-2">99.9%</div>
+          <div class="text-indigo-200 text-lg font-medium">Uptime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Testimonials Section %>
+  <section class="py-16 md:py-24 bg-theme-primary">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center mb-16">
+        <h5 class="text-indigo-600 font-semibold tracking-wide uppercase mb-3">Success Stories</h5>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-primary">What Our Customers Say</h2>
+        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-theme-secondary max-w-3xl mx-auto">
+          Discover how E-sika has helped businesses grow and succeed in the competitive online marketplace.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <%# Testimonial Cards %>
+        <div class="bg-white rounded-xl shadow-lg p-8 relative">
+          <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+            <svg class="h-10 w-10 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <div class="pt-4">
+            <p class="text-lg text-theme-secondary mb-6 italic">
+              "E-sika revolutionized our business. We were struggling to manage our physical products alongside our online courses. Now, everything is in one place, and our sales have increased by 45% since switching!"
+            </p>
+            <div class="flex items-center">
+              <div class="flex-shrink-0 mr-4">
+                <img 
+                  src="/assets/images/testimonial-1.jpg" 
+                  alt="Customer Photo" 
+                  class="h-12 w-12 rounded-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='Customer portrait'"
+                >
+              </div>
+              <div>
+                <div class="font-medium text-theme-primary">Sarah Thompson</div>
+                <div class="text-indigo-600">Founder, Mindful Creations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 relative">
+          <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+            <svg class="h-10 w-10 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <div class="pt-4">
+            <p class="text-lg text-theme-secondary mb-6 italic">
+              "The dropshipping integration is seamless. I went from manually forwarding orders to a fully automated system. The time saved has allowed me to focus on marketing and growing my business."
+            </p>
+            <div class="flex items-center">
+              <div class="flex-shrink-0 mr-4">
+                <img 
+                  src="/assets/images/testimonial-2.jpg" 
+                  alt="Customer Photo" 
+                  class="h-12 w-12 rounded-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='Customer portrait'"
+                >
+              </div>
+              <div>
+                <div class="font-medium text-theme-primary">Michael Robinson</div>
+                <div class="text-indigo-600">Owner, Tech Essentials</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 relative">
+          <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+            <svg class="h-10 w-10 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <div class="pt-4">
+            <p class="text-lg text-theme-secondary mb-6 italic">
+              "As a service provider, the booking system has been a game-changer. My clients can now schedule appointments online, make payments, and receive automatic reminders. No more no-shows or scheduling conflicts!"
+            </p>
+            <div class="flex items-center">
+              <div class="flex-shrink-0 mr-4">
+                <img 
+                  src="/assets/images/testimonial-3.jpg" 
+                  alt="Customer Photo" 
+                  class="h-12 w-12 rounded-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='Customer portrait'"
+                >
+              </div>
+              <div>
+                <div class="font-medium text-theme-primary">Jennifer Davis</div>
+                <div class="text-indigo-600">Founder, Wellness Workshop</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 relative">
+          <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+            <svg class="h-10 w-10 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <div class="pt-4">
+            <p class="text-lg text-theme-secondary mb-6 italic">
+              "The affiliate marketing system built into E-sika has transformed how we grow. Setting up our own program was easy, and now we have over 100 affiliates promoting our products. It's been a huge revenue driver."
+            </p>
+            <div class="flex items-center">
+              <div class="flex-shrink-0 mr-4">
+                <img 
+                  src="/assets/images/testimonial-4.jpg" 
+                  alt="Customer Photo" 
+                  class="h-12 w-12 rounded-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'; this.alt='Customer portrait'"
+                >
+              </div>
+              <div>
+                <div class="font-medium text-theme-primary">Robert Kiyosaki</div>
+                <div class="text-indigo-600">CEO, Digital Education Hub</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="/case-studies" class="inline-flex items-center px-6 py-3 border border-indigo-600 text-base font-medium rounded-md text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300">
+          View All Success Stories
+          <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <%# Call to Action Section %>
+  <section class="py-16 md:py-24 bg-gradient-to-r from-indigo-600 to-purple-700 text-white relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-grid-white/[0.05] bg-grid-8"></div>
+    </div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl z-10">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Transform Your Online Business?</h2>
+        <p class="text-xl text-indigo-100 mb-10 max-w-3xl mx-auto">
+          Join thousands of businesses who trust E-sika to power their online sales, bookings, digital products, and more.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+          <a href="/signup" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-lg text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white transition-all duration-300">
+            Start Your Free Trial
+            <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 border border-white text-lg font-medium rounded-md shadow-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white transition-all duration-300">
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%# Animations Stylesheet (Add to application.css or styles) %>
+<style>
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 3s ease-in-out 1.5s infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Additional utility classes */
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23ffffff'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.bg-grid-8 {
+  background-size: 2rem 2rem;
+}
+</style>

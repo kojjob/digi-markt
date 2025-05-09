@@ -1,6 +1,6 @@
 <!-- app/views/shared/_footer.html.erb -->
 
-<footer class="bg-gray-900 text-white pt-16 pb-12">
+<footer class="bg-theme-inverted text-theme-inverted pt-16 pb-12">
   <!-- Main Footer Section -->
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -10,9 +10,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
           </svg>
-          <span class="ml-2 text-xl font-bold text-white">E-sika</span>
+          <span class="ml-2 text-xl font-bold text-theme-inverted">E-sika</span>
         </div>
-        <p class="text-gray-400 mb-6 max-w-md">
+        <p class="text-theme-tertiary mb-6 max-w-md">
           E-sika is your all-in-one e-commerce platform for selling physical products, digital downloads, and services. Built with modern businesses in mind, we help you grow your online presence with powerful tools and elegant storefronts.
         </p>
         <div class="flex space-x-5 mb-8">
@@ -47,19 +47,19 @@
             </svg>
           </a>
         </div>
-        
+
         <!-- Newsletter Signup -->
         <div>
-          <h3 class="text-white font-medium mb-3">Stay Updated</h3>
-          <p class="text-gray-400 mb-3 text-sm">
+          <h3 class="text-theme-inverted font-medium mb-3">Stay Updated</h3>
+          <p class="text-theme-tertiary mb-3 text-sm">
             Subscribe to our newsletter for product updates, tips, and special offers.
           </p>
           <form action="/subscribe" method="POST" class="flex flex-wrap" data-controller="newsletter">
             <div class="relative w-full lg:max-w-sm">
-              <input type="email" required name="email" placeholder="Your email address" 
+              <input type="email" required name="email" placeholder="Your email address"
                      class="w-full rounded-lg border-0 bg-gray-800 text-white placeholder-gray-500 py-3 pl-4 pr-20 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                      data-newsletter-target="email">
-              <button type="submit" 
+              <button type="submit"
                       class="absolute inset-y-0 right-0 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-r-lg px-4 transition-colors"
                       data-action="click->newsletter#subscribe">
                 Subscribe
@@ -71,41 +71,44 @@
           </form>
         </div>
       </div>
-      
+
       <!-- Quick Links -->
       <div class="lg:mt-0">
-        <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+        <h3 class="text-theme-inverted text-lg font-semibold mb-4">Quick Links</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a>
+            <a href="/" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Home</a>
           </li>
           <li>
-            <a href="/products" class="text-gray-400 hover:text-white transition-colors">Shop</a>
+            <a href="/products" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Shop</a>
           </li>
           <li>
-            <a href="/features" class="text-gray-400 hover:text-white transition-colors">Features</a>
+            <a href="/features" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Features</a>
           </li>
           <li>
-            <a href="/pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
+            <a href="/pricing" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Pricing</a>
           </li>
           <li>
-            <a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+            <a href="/blog" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Blog</a>
           </li>
           <li>
-            <a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+            <a href="/about" class="text-theme-tertiary hover:text-theme-inverted transition-colors">About Us</a>
           </li>
           <li>
-            <a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            <a href="/contact" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Contact</a>
+          </li>
+          <li>
+            <a href="/theme" class="text-theme-tertiary hover:text-theme-inverted transition-colors">Theme System</a>
           </li>
         </ul>
       </div>
-      
+
       <!-- Resources -->
       <div class="lg:mt-0">
-        <h3 class="text-white text-lg font-semibold mb-4">Resources</h3>
+        <h3 class="text-theme-inverted text-lg font-semibold mb-4">Resources</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/help-center" class="text-gray-400 hover:text-white transition-colors">Help Center</a>
+            <a href="/help" class="text-gray-400 hover:text-white transition-colors">Help Center</a>
           </li>
           <li>
             <a href="/api-docs" class="text-gray-400 hover:text-white transition-colors">API Documentation</a>
@@ -127,10 +130,10 @@
           </li>
         </ul>
       </div>
-      
+
       <!-- Legal -->
       <div class="lg:mt-0">
-        <h3 class="text-white text-lg font-semibold mb-4">Legal</h3>
+        <h3 class="text-theme-inverted text-lg font-semibold mb-4">Legal</h3>
         <ul class="space-y-2">
           <li>
             <a href="/privacy-policy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -153,13 +156,13 @@
         </ul>
       </div>
     </div>
-    
+
     <!-- Payment Methods and App Badges -->
-    <div class="mt-10 pt-8 border-t border-gray-800">
+    <div class="mt-10 pt-8 border-t border-theme-tertiary">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Payment Methods -->
         <div>
-          <h3 class="text-white text-base font-medium mb-4">Payment Methods</h3>
+          <h3 class="text-theme-inverted text-base font-medium mb-4">Payment Methods</h3>
           <div class="flex flex-wrap gap-3">
             <div class="h-10 w-16 bg-gray-800 rounded-md flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-auto" viewBox="0 0 24 24" fill="none">
@@ -222,10 +225,10 @@
             </div>
           </div>
         </div>
-        
+
         <!-- App Badges -->
         <div class="flex flex-col md:items-end">
-          <h3 class="text-white text-base font-medium mb-4">Download Our App</h3>
+          <h3 class="text-theme-inverted text-base font-medium mb-4">Download Our App</h3>
           <div class="flex flex-wrap gap-4">
             <a href="#" class="bg-gray-800 hover:bg-gray-700 transition-colors rounded-lg px-4 py-2 flex items-center">
               <svg class="h-7 w-7 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -249,35 +252,35 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Copyright & Legal Info -->
-    <div class="mt-10 pt-8 border-t border-gray-800">
+    <div class="mt-10 pt-8 border-t border-theme-tertiary">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+        <div class="text-theme-tertiary text-sm mb-4 md:mb-0">
           &copy; <%= Date.current.year %> E-sika. All rights reserved.
         </div>
-        <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400">
-          <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
-          <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie Policy</a>
+        <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-theme-tertiary">
+          <a href="/privacy-policy" class="hover:text-theme-inverted transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="hover:text-theme-inverted transition-colors">Terms of Service</a>
+          <a href="/cookie-policy" class="hover:text-theme-inverted transition-colors">Cookie Policy</a>
           <div class="flex items-center">
             <span class="mr-2">Language:</span>
             <div class="relative" data-controller="dropdown">
-              <button class="flex items-center text-gray-300 hover:text-white focus:outline-none"
+              <button class="flex items-center text-theme-tertiary hover:text-theme-inverted focus:outline-none"
                       data-action="click->dropdown#toggle">
                 <span>English</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div class="absolute bottom-full mb-2 right-0 w-36 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 hidden transform origin-bottom-right" 
+              <div class="absolute bottom-full mb-2 right-0 w-36 rounded-md shadow-lg bg-theme-inverted ring-1 ring-black ring-opacity-5 focus:outline-none z-50 hidden transform origin-bottom-right"
                    data-dropdown-target="menu">
                 <div class="py-1">
-                  <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors">English</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors">Français</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors">Español</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors">Deutsch</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors">日本語</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-theme-inverted hover:bg-theme-tertiary transition-colors">English</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-theme-tertiary hover:bg-theme-tertiary transition-colors">Français</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-theme-tertiary hover:bg-theme-tertiary transition-colors">Español</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-theme-tertiary hover:bg-theme-tertiary transition-colors">Deutsch</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-theme-tertiary hover:bg-theme-tertiary transition-colors">日本語</a>
                 </div>
               </div>
             </div>

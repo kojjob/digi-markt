@@ -1,0 +1,598 @@
+<%# Tutorial Detail Page %>
+<div class="bg-theme-primary min-h-screen" data-controller="tutorial" data-tutorial-progress-value="25" data-tutorial-total-steps-value="<%= @tutorial[:steps].length %>" data-tutorial-current-step-value="1">
+  <%# Image Lightbox (Hidden by default) %>
+  <div data-tutorial-target="lightbox" class="lightbox hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+    <button data-action="click->tutorial#closeLightbox" class="lightbox-close">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img data-tutorial-target="lightboxImage" src="" alt="" class="lightbox-image">
+    </div>
+  </div>
+
+  <%# Header Section - Enhanced with gradient and pattern %>
+  <section class="tutorial-detail-header relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 opacity-95"></div>
+    <div class="absolute inset-0 bg-grid-white/[0.07] bg-grid-8"></div>
+    <%# Animated blobs in background %>
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-pink-600/20 rounded-full filter blur-3xl"></div>
+    <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-600/20 rounded-full filter blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10 py-16 md:py-20">
+      <div class="breadcrumbs mb-6 flex items-center text-sm">
+        <a href="<%= root_path %>" class="text-indigo-200 hover:text-white transition-colors">Home</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+        <a href="<%= tutorials_path %>" class="text-indigo-200 hover:text-white transition-colors">Tutorials</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+        <span class="text-white truncate max-w-[200px] md:max-w-none"><%= @tutorial[:title] %></span>
+      </div>
+      
+      <h1 class="tutorial-detail-title text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white leading-tight"><%= @tutorial[:title] %></h1>
+      <p class="tutorial-detail-description text-xl text-indigo-100 mb-8 max-w-3xl"><%= @tutorial[:description] %></p>
+      
+      <div class="tutorial-detail-meta flex flex-wrap items-center gap-y-6 gap-x-8 text-indigo-200">
+        <div class="tutorial-detail-author flex items-center">
+          <div class="relative mr-4 flex-shrink-0">
+            <img 
+              src="<%= @tutorial[:author][:avatar] %>" 
+              alt="<%= @tutorial[:author][:name] %>" 
+              class="w-12 h-12 rounded-full border-2 border-indigo-300 object-cover"
+            >
+            <div class="absolute bottom-0 right-0 bg-green-400 w-3 h-3 rounded-full border-2 border-indigo-700"></div>
+          </div>
+          <div class="tutorial-detail-author-info">
+            <div class="tutorial-detail-author-name font-semibold text-white"><%= @tutorial[:author][:name] %></div>
+            <div class="tutorial-detail-author-role text-xs"><%= @tutorial[:author][:role] %></div>
+          </div>
+        </div>
+        
+        <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><%= @tutorial[:duration] %></span>
+        </div>
+        
+        <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span><%= @tutorial[:level] %></span>
+        </div>
+        
+        <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span>Updated <%= time_ago_in_words(@tutorial[:published_at]) %> ago</span>
+        </div>
+        
+        <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          <span>5.2K Views</span>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap gap-2 mt-6">
+        <% @tutorial[:tags].each do |tag| %>
+          <span class="tutorial-detail-tag inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-700/50 text-white backdrop-blur-sm">
+            #<%= tag %>
+          </span>
+        <% end %>
+      </div>
+      
+      <%# Progress Bar and Navigation Tools %>
+      <div class="mt-12 bg-white/10 backdrop-blur-sm rounded-xl p-4 flex flex-col md:flex-row items-center gap-4">
+        <div class="flex-grow">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium text-indigo-200">Progress</span>
+            <span class="text-xs font-medium text-indigo-200" data-tutorial-target="progressText">25%</span>
+          </div>
+          <div class="w-full bg-indigo-900/50 rounded-full h-2">
+            <div data-tutorial-target="progressBar" class="bg-indigo-400 h-2 rounded-full" style="width: 25%"></div>
+          </div>
+        </div>
+        
+        <div class="flex gap-2 items-center">
+          <button class="tutorial-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+            Save
+          </button>
+          
+          <button class="tutorial-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+            Share
+          </button>
+          
+          <button class="tutorial-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <%# Wave Divider %>
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="w-full h-auto">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L48 8.875C96 17.9167 192 35.8333 288 53.75C384 71.6667 480 89.5833 576 80.9375C672 71.6667 768 35.8333 864 26.875C960 17.9167 1056 35.8333 1152 44.8125C1248 53.75 1344 53.75 1392 53.75H1440V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V0Z" fill="currentColor" class="text-theme-primary"></path>
+      </svg>
+    </div>
+  </section>
+
+  <%# Table of Contents - New Section %>
+  <section class="py-6 border-b border-theme-tertiary/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold text-theme-primary flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+          Table of Contents
+        </h2>
+        
+        <button class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+          </svg>
+          Expand All
+        </button>
+      </div>
+      
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <% @tutorial[:steps].each_with_index do |step, index| %>
+          <a href="#step-<%= index + 1 %>" class="group flex items-center p-3 rounded-lg border border-theme-tertiary/30 hover:border-indigo-300 hover:bg-indigo-50 transition-colors">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center font-bold transition-colors mr-3">
+              <%= index + 1 %>
+            </div>
+            <div class="truncate"><%= step[:title] %></div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <%# Main Content - Enhanced with modern step design %>
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <%# Tutorial Steps %>
+      <div class="tutorial-steps space-y-16 py-8">
+        <% @tutorial[:steps].each_with_index do |step, index| %>
+          <div id="step-<%= index + 1 %>" class="tutorial-step relative">
+            <%# Line connecting steps %>
+            <% if index < @tutorial[:steps].length - 1 %>
+              <div class="absolute top-16 bottom-0 left-6 md:left-1/2 md:ml-[-1px] border-l-2 border-dashed border-indigo-200 z-0"></div>
+            <% end %>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+              <%# Step Content %>
+              <div class="tutorial-step-content md:order-<%= index % 2 == 0 ? 1 : 2 %>">
+                <div class="tutorial-step-counter relative z-10 flex items-center">
+                  <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                    <%= index + 1 %>
+                  </div>
+                  <div class="h-1 bg-indigo-200 flex-grow ml-4"></div>
+                </div>
+                
+                <h2 class="tutorial-step-title text-2xl font-bold text-theme-primary mt-6 mb-4">
+                  <%= step[:title] %>
+                </h2>
+                
+                <div class="prose prose-indigo max-w-none">
+                  <p class="tutorial-step-description text-theme-secondary mb-6 text-lg leading-relaxed"><%= step[:content] %></p>
+                  
+                  <%# Step Highlights Box %>
+                  <div class="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-r-lg my-6">
+                    <h4 class="text-indigo-800 font-medium mb-2 flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Key Takeaway
+                    </h4>
+                    <p class="text-indigo-700">
+                      <%= step[:content].split('.').first %> Always make sure to verify this step before proceeding.
+                    </p>
+                  </div>
+                  
+                  <%# Interactive Elements - Code Snippet or Checklist %>
+                  <% if index % 3 == 0 %>
+                    <%# Enhanced Code Block with Syntax Highlighting and Copy Button %>
+                    <div class="code-block">
+                      <div class="code-header">
+                        <div class="code-language">JavaScript</div>
+                        <button class="copy-button">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                          Copy
+                        </button>
+                      </div>
+                      <pre class="line-numbers"><code data-tutorial-target="codeBlock" class="language-javascript">// Example code related to this step
+import { useEffect, useState } from 'react';
+
+function ShopifyApp() {
+  const [products, setProducts] = useState([]);
+  
+  useEffect(() => {
+    // Fetch products from your store
+    async function fetchProducts() {
+      const response = await fetch('/api/products');
+      const data = await response.json();
+      setProducts(data);
+    }
+    
+    fetchProducts();
+  }, []);
+  
+  return (
+    <div className="product-grid">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}</code></pre>
+                    </div>
+                  <% elsif index % 3 == 1 %>
+                    <div class="bg-white rounded-lg border border-indigo-100 p-5 my-6 shadow-sm">
+                      <h4 class="font-medium text-theme-primary mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        Checklist
+                      </h4>
+                      <div class="space-y-2">
+                        <div class="flex items-start">
+                          <input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                          <span>Step 1: <%= step[:content].split('.').first %>.</span>
+                        </div>
+                        <div class="flex items-start">
+                          <input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                          <span>Step 2: Verify all credentials are set up correctly.</span>
+                        </div>
+                        <div class="flex items-start">
+                          <input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                          <span>Step 3: Test connection with your API endpoint.</span>
+                        </div>
+                      </div>
+                    </div>
+                  <% elsif index % 3 == 2 %>
+                    <%# Quiz Component %>
+                    <div class="quiz-container my-8">
+                      <div class="quiz-header">
+                        <h4 class="quiz-title flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Knowledge Check
+                        </h4>
+                        <p class="quiz-description">Test your understanding of this section with a quick quiz.</p>
+                      </div>
+                      
+                      <form data-tutorial-target="quizForm" data-action="submit->tutorial#submitQuiz" class="mt-6">
+                        <div class="quiz-question" data-question-id="1" data-correct-answer="b">
+                          <p class="quiz-question-text">1. What is the primary purpose of the code above?</p>
+                          <div class="quiz-options mt-3">
+                            <div class="quiz-option">
+                              <input type="radio" id="q1-a" name="question-1" value="a" class="h-5 w-5 rounded-full border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                              <label for="q1-a">To display a single product</label>
+                            </div>
+                            <div class="quiz-option">
+                              <input type="radio" id="q1-b" name="question-1" value="b" class="h-5 w-5 rounded-full border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                              <label for="q1-b">To fetch and display a list of products</label>
+                            </div>
+                            <div class="quiz-option">
+                              <input type="radio" id="q1-c" name="question-1" value="c" class="h-5 w-5 rounded-full border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5 mr-3">
+                              <label for="q1-c">To add a new product to the catalog</label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <button type="submit" class="quiz-submit">
+                          Check Answers
+                        </button>
+                      </form>
+                      
+                      <div data-tutorial-target="quizResult" class="quiz-result quiz-success hidden">
+                        <div class="flex items-center gap-2 font-medium mb-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>Your score:</span> <span data-tutorial-target="quizScore" class="quiz-result-score">0/0</span>
+                        </div>
+                        <button data-action="click->tutorial#resetQuiz" class="quiz-retry">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          </svg>
+                          Try Again
+                        </button>
+                      </div>
+                    </div>
+                  <% end %>
+                  
+                  <% if index == @tutorial[:steps].length - 1 %>
+                    <div class="mt-8">
+                      <button class="theme-btn theme-btn-primary inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Mark as Complete
+                      </button>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              
+              <%# Step Image %>
+              <div class="md:order-<%= index % 2 == 0 ? 2 : 1 %>">
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-indigo-100 bg-white p-1">
+                  <img 
+                    src="<%= step[:image] %>" 
+                    alt="<%= step[:title] %>" 
+                    class="tutorial-step-image rounded-lg h-64 md:h-72 w-full object-cover"
+                  >
+                  
+                  <%# Image Caption %>
+                  <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/80 to-transparent text-white p-4 pt-12">
+                    <div class="text-sm font-medium">Figure <%= index + 1 %>: Illustration of <%= step[:title].downcase %></div>
+                  </div>
+                  
+                  <%# Zoom Icon %>
+                  <div class="absolute top-2 right-2">
+                    <button data-action="click->tutorial#openLightbox" class="bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+      <%# Share and Feedback Section - Enhanced with better design %>
+      <div class="mt-16 pt-10 border-t border-theme-tertiary/30">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12">
+          <div>
+            <h3 class="text-xl font-bold text-theme-primary mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+              Share this Tutorial
+            </h3>
+            <p class="text-theme-secondary mb-4">Help your friends and colleagues learn about e-commerce.</p>
+            <div class="flex space-x-3">
+              <a href="#" class="social-share-btn bg-[#1DA1F2] hover:bg-[#0d95e8]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+                <span>Twitter</span>
+              </a>
+              <a href="#" class="social-share-btn bg-[#0077B5] hover:bg-[#006699]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="#" class="social-share-btn bg-[#4267B2] hover:bg-[#365899]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </div>
+            
+            <%# Copy Link Button %>
+            <div class="mt-4">
+              <div class="relative">
+                <input data-tutorial-target="copyLinkInput" type="text" value="https://e-sika.com/tutorials/<%= @tutorial[:slug] %>" readonly class="w-full py-2.5 pl-4 pr-24 rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm bg-white">
+                <button data-tutorial-target="copyLinkButton" data-action="click->tutorial#copyLink" class="absolute right-1 top-1 bottom-1 px-3 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-700 transition-colors flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span data-tutorial-target="copyLinkText">Copy Link</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-bold text-theme-primary mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              Was this tutorial helpful?
+            </h3>
+            <p class="text-theme-secondary mb-4">Your feedback helps us improve our tutorials.</p>
+            <div class="flex space-x-4">
+              <button data-action="click->tutorial#toggleFeedbackForm" class="feedback-btn feedback-btn-yes">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                </svg>
+                Yes, it was helpful
+              </button>
+              <button data-action="click->tutorial#toggleFeedbackForm" class="feedback-btn feedback-btn-no">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2" />
+                </svg>
+                No, needs improvement
+              </button>
+            </div>
+            
+            <%# Feedback Form - Initially Hidden %>
+            <div data-tutorial-target="feedbackForm" class="mt-4 hidden">
+              <textarea placeholder="Tell us how we can improve this tutorial..." class="w-full px-4 py-3 rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm h-24"></textarea>
+              <button class="mt-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-700 transition-colors">
+                Submit Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Related Tutorials - Enhanced with improved cards %>
+  <section class="py-12 md:py-16 bg-theme-secondary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%236366f1\" fill-opacity=\"0.2\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="related-tutorials-title text-2xl font-bold text-theme-primary flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+          </svg>
+          Related Tutorials
+        </h2>
+        
+        <a href="<%= tutorials_path %>" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors flex items-center group">
+          See All Tutorials
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <% @related_tutorials.each do |tutorial| %>
+          <div class="related-tutorial-card group">
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img 
+                src="<%= tutorial[:image] %>" 
+                alt="<%= tutorial[:title] %>" 
+                class="related-tutorial-image group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-theme-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute bottom-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                <a href="<%= tutorial_detail_path(tutorial[:slug]) %>" class="inline-flex items-center bg-indigo-600 text-white px-2.5 py-1 rounded-lg text-xs font-medium hover:bg-indigo-700 transition-colors">
+                  <span>Read</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="related-tutorial-content">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
+                  <%= tutorial[:level] %>
+                </span>
+                <span class="text-xs text-theme-tertiary flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <%= tutorial[:duration] %>
+                </span>
+              </div>
+              
+              <h3 class="related-tutorial-title">
+                <a href="<%= tutorial_detail_path(tutorial[:slug]) %>" class="hover:text-indigo-600 transition-colors"><%= tutorial[:title] %></a>
+              </h3>
+              <p class="related-tutorial-excerpt"><%= tutorial[:excerpt] %></p>
+              
+              <div class="related-tutorial-meta">
+                <div class="flex items-center">
+                  <img 
+                    src="<%= tutorial[:author][:avatar] %>" 
+                    alt="<%= tutorial[:author][:name] %>" 
+                    class="w-6 h-6 rounded-full border border-indigo-100 mr-2 object-cover"
+                  >
+                  <span><%= tutorial[:author][:name] %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class="mt-10 text-center">
+        <a href="<%= tutorials_path %>" class="theme-btn theme-btn-primary inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          Browse All Tutorials
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <%# Next & Previous Tutorial Navigation - New Section %>
+  <section class="py-8 border-t border-theme-tertiary/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="flex flex-col sm:flex-row gap-4 justify-between">
+        <a href="#" class="previous-tutorial flex items-center p-4 rounded-lg border border-theme-tertiary/30 hover:border-indigo-300 hover:bg-indigo-50 transition-colors group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-indigo-600 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <div>
+            <div class="text-xs text-theme-tertiary mb-1">Previous Tutorial</div>
+            <div class="font-medium text-theme-primary">Getting Started with Shopify</div>
+          </div>
+        </a>
+        
+        <a href="#" class="next-tutorial flex items-center justify-end text-right p-4 rounded-lg border border-theme-tertiary/30 hover:border-indigo-300 hover:bg-indigo-50 transition-colors group">
+          <div>
+            <div class="text-xs text-theme-tertiary mb-1">Next Tutorial</div>
+            <div class="font-medium text-theme-primary">Advanced Product Photography</div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-3 text-indigo-600 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <%# Progress Navigation Bar (Fixed at Bottom) %>
+  <div class="progress-nav">
+    <div class="progress-nav-container">
+      <button 
+        data-action="tutorial#previousStep" 
+        class="step-button step-button-prev flex items-center"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Previous
+      </button>
+      
+      <div class="progress-tracker">
+        <div class="progress-steps">
+          <span class="progress-steps-text">Step <span data-tutorial-current-step-value="1">1</span> of <%= @tutorial[:steps].length %></span>
+          <span class="progress-percentage" data-tutorial-target="progressText">25%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div data-tutorial-target="progressBar" class="progress-bar" style="width: 25%"></div>
+        </div>
+      </div>
+      
+      <button 
+        data-action="tutorial#nextStep" 
+        class="step-button step-button-next flex items-center"
+      >
+        Next
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

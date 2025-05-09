@@ -1,0 +1,125 @@
+<div class="p-8">
+  <h2 class="text-2xl font-bold mb-6">Theme System Examples</h2>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Buttons</h3>
+    <div class="flex flex-wrap gap-4">
+      <%= render 'shared/theme_button', text: 'Primary Button', style: :primary %>
+      <%= render 'shared/theme_button', text: 'Secondary Button', style: :secondary %>
+      <%= render 'shared/theme_button', text: 'Accent Button', style: :accent %>
+      <%= render 'shared/theme_button', text: 'Outline Button', style: :outline %>
+      <%= render 'shared/theme_button', text: 'Ghost Button', style: :ghost %>
+      <%= render 'shared/theme_button', text: 'Small Button', style: :primary, size: :sm %>
+      <%= render 'shared/theme_button', text: 'Large Button', style: :primary, size: :lg %>
+      <%= render 'shared/theme_button',
+          text: 'Button with Icon',
+          style: :primary,
+          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" /></svg>' %>
+      <%= render 'shared/theme_button', text: 'Link Button', style: :primary, href: '#' %>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Cards</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <%= render 'shared/theme_card',
+          title: 'Card Title',
+          footer: render('shared/theme_button', text: 'Action', style: :primary) do %>
+        <p>This is a sample card using our theme system. It uses the theme variables for consistent styling.</p>
+      <% end %>
+
+      <%= render 'shared/theme_card',
+          title: 'Another Card',
+          footer: render('shared/theme_button', text: 'View Details', style: :secondary) do %>
+        <p>Cards can be used for various content types and maintain consistent styling.</p>
+      <% end %>
+
+      <%= render 'shared/theme_card', title: 'Card with Image' do %>
+        <img src="https://via.placeholder.com/300x150" alt="Placeholder" class="w-full h-auto rounded-md mb-4">
+        <p>Cards can include images, text, and other content.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Form Elements</h3>
+    <div class="max-w-md">
+      <div class="mb-4">
+        <label class="theme-label" for="name">Name</label>
+        <input type="text" id="name" class="theme-input" placeholder="Enter your name">
+      </div>
+
+      <div class="mb-4">
+        <label class="theme-label" for="email">Email</label>
+        <input type="email" id="email" class="theme-input" placeholder="Enter your email">
+      </div>
+
+      <div class="mb-4">
+        <label class="theme-label" for="country">Country</label>
+        <select id="country" class="theme-select">
+          <option value="">Select a country</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <option value="au">Australia</option>
+        </select>
+      </div>
+
+      <button class="theme-btn theme-btn-primary">Submit</button>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Badges</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="theme-badge theme-badge-primary">Primary</span>
+      <span class="theme-badge theme-badge-secondary">Secondary</span>
+      <span class="theme-badge theme-badge-accent">Accent</span>
+      <span class="theme-badge theme-badge-success">Success</span>
+      <span class="theme-badge theme-badge-warning">Warning</span>
+      <span class="theme-badge theme-badge-error">Error</span>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Alerts</h3>
+    <div class="space-y-4">
+      <%= render 'shared/theme_alert',
+          message: 'This is an informational alert.',
+          title: 'Info',
+          style: :info %>
+
+      <%= render 'shared/theme_alert',
+          message: 'Your action was completed successfully.',
+          title: 'Success',
+          style: :success %>
+
+      <%= render 'shared/theme_alert',
+          message: 'Please be careful with this action.',
+          title: 'Warning',
+          style: :warning %>
+
+      <%= render 'shared/theme_alert',
+          message: 'Something went wrong. Please try again.',
+          title: 'Error',
+          style: :error %>
+
+      <%= render 'shared/theme_alert',
+          message: 'This alert can be dismissed by clicking the X button.',
+          title: 'Dismissible Alert',
+          style: :info,
+          dismissible: true %>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-4">Navigation</h3>
+    <nav class="theme-nav">
+      <a href="#" class="theme-nav-item theme-nav-item-active">Home</a>
+      <a href="#" class="theme-nav-item">Products</a>
+      <a href="#" class="theme-nav-item">Services</a>
+      <a href="#" class="theme-nav-item">About</a>
+      <a href="#" class="theme-nav-item">Contact</a>
+    </nav>
+  </div>
+</div>

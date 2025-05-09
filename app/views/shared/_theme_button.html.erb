@@ -1,0 +1,58 @@
+<%# 
+  Theme Button Component
+  
+  Usage:
+  <%= render 'shared/theme_button', 
+      text: 'Button Text', 
+      style: :primary, 
+      size: :md, 
+      additional_classes: 'mt-4' 
+  %>
+  
+  Options:
+  - text: The button text (required)
+  - style: :primary (default), :secondary, :accent, :outline, :ghost
+  - size: :sm, :md (default), :lg
+  - additional_classes: Any additional classes to add
+  - href: If provided, renders as an anchor tag instead of a button
+  - icon: If provided, adds an icon before the text
+%>
+
+<% 
+  # Default values
+  style ||= :primary
+  size ||= :md
+  additional_classes ||= ''
+  
+  # Base classes
+  base_class = "theme-btn theme-btn-#{style}"
+  
+  # Size classes
+  size_class = case size
+               when :sm
+                 "text-sm py-1 px-3"
+               when :md
+                 "py-2 px-4"
+               when :lg
+                 "text-lg py-3 px-6"
+               end
+  
+  # Combined classes
+  classes = "#{base_class} #{size_class} #{additional_classes}"
+%>
+
+<% if defined?(href) && href.present? %>
+  <a href="<%= href %>" class="<%= classes %>">
+    <% if defined?(icon) && icon.present? %>
+      <span class="mr-2"><%= icon %></span>
+    <% end %>
+    <%= text %>
+  </a>
+<% else %>
+  <button class="<%= classes %>">
+    <% if defined?(icon) && icon.present? %>
+      <span class="mr-2"><%= icon %></span>
+    <% end %>
+    <%= text %>
+  </button>
+<% end %>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="<%= cookies[:theme] == 'dark' ? 'dark' : '' %>">
   <head>
     <title><%= content_for(:title) || "Digi Markt" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,12 +17,48 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <script>
+      // Initialize theme based on cookie or system preference to prevent flash of wrong theme
+      (function() {
+        function getCookie(name) {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          if (parts.length === 2) return parts.pop().split(';').shift();
+          return null;
+        }
+
+        const theme = getCookie('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <%# Load tutorial-specific resources if on tutorial pages %>
+    <% if controller_name == 'pages' && ['tutorials', 'tutorial_detail'].include?(action_name) %>
+      <%= render 'layouts/partials/tutorial_scripts' %>
+    <% end %>
+
+    <script>
+      // Initialize theme based on cookie or system preference
+      if (document.cookie.includes('theme=dark') ||
+          (!document.cookie.includes('theme=') &&
+           window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
 
-  <body>
+  <body class="bg-theme-primary text-theme-primary min-h-screen flex flex-col">
     <%= render "shared/header" %>
     <main class="flex-1">
       <%= yield %>
