@@ -64,13 +64,12 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "rspec-rails", "~> 8.0", groups: [:development, :test]
-gem "factory_bot_rails", "~> 6.4", groups: [:development, :test]
-gem "faker", "~> 3.5", groups: [:development, :test]
-gem "shoulda-matchers", "~> 6.5", groups: [:development, :test]
-gem "database_cleaner", "~> 2.1", groups: [:development, :test]
+gem "rspec-rails", "~> 8.0", groups: [ :development, :test ]
+gem "factory_bot_rails", "~> 6.4", groups: [ :development, :test ]
+gem "faker", "~> 3.5", groups: [ :development, :test ]
+gem "shoulda-matchers", "~> 6.5", groups: [ :development, :test ]
+gem "database_cleaner", "~> 2.1", groups: [ :development, :test ]
 
 gem "devise", "~> 4.9"
 
 gem "acts_as_tenant", "~> 1.0"
-
